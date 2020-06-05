@@ -92,6 +92,7 @@ function generatePassword() {
 function writePassword() {
   console.log("Button clicked");
   var password = generatePassword();
+  console.log("PRESENT PASSWORD "+ password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
