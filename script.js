@@ -6,6 +6,8 @@ var generateBtn = document.querySelector("#generate");
 //Function for generatePassword to be used in writePassword function
 function generatePassword() {
   console.log("generatePassword initiated");
+  var passwordLength = prompt ("Choose your password length by entering a number between 8 and 128.");
+  console.log(passwordLength);
 }
 
 // Write password to the #password input
