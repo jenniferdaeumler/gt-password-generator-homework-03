@@ -14,6 +14,35 @@ function writePassword() {
       numeric = confirm("Do you want numeric characters?"),
       special = confirm("Do you want special characters?");
   }
+  var upperCaseOptions = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "U",
+    "X",
+    "Y",
+    "Z",
+  ];
   var lowerCaseOptions = [
     "a",
     "b",
@@ -44,40 +73,42 @@ function writePassword() {
   ];
   var numericOptions = [1,2,3,4,5,6,7,8,9,0];
 
-  var specialOptions = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+  var specialOptions = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 
-  var upperCaseOptions = []
+  var userChoice= [];
 
-  if (lowerCase) {
-    passwordLength += lowerCaseOptions;
-  }
   if (upperCase) {
-    passwordLength += upperCaseOptions;
+   userChoice.push(upperCaseOptions);
+  }
+  if (lowerCase) {
+    userChoice.push(lowerCaseOptions);
   }
   if (numeric) {
-    passwordLength += numericOptions;
+    userChoice.push(numericOptions);
   }
   if (special) {
-    passwordLength += specialOptions;
+    userChoice.push(specialOptions);
+  } else {
+   
   }
+  console.log(userChoice);
 
+var userPassword = ("k");
 
-//   plength = Number(lengthInput.value);
-var userPassword = ("");
-
-  for (let i = 0; i < passwordLength.length; i++) {
+  for (i = 0; i < passwordLength; i++) {
     userPassword += passwordLength.charAt()
-      Math.floor(Math.random() * passwordLength.length)
-    ;
-  }
-  console.log(userPassword)
-}
+     Math.floor(Math.random() * userChoice.length)
+    ;} }
 
-// console.log("You clicked my button!");
-// var password = generatePassword();
-// var passwordText = document.querySelector("#password");
+ //why does getting rid of 104 make button go away, and pop up automatically, but with it, its undefined?
+    console.log(userPassword);
 
-// passwordText.value = password;
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+ var password = writePassword();
+var passwordText = document.querySelector("#password");
+
+passwordText.value = password;
+
+ //Add event listener to generate button
+generateBtn.addEventListener("click", writePassword); 
+
