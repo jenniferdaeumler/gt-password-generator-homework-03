@@ -1,114 +1,103 @@
+console.log("This is script.js");
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//Function for generatePassword to be used in writePassword function
+function generatePassword() {
+  console.log("generatePassword initiated");
+  var passwordLength = prompt("Choose your password length by entering a number between 8 and 128.");
+  console.log(passwordLength);
+
+  var characterTypes = [];
+
+  var lowerCase = confirm("Would you like to include lowercase characters?");
+  if (lowerCase === true) {
+    characterTypes.push(0);
+  }
+  console.log(lowerCase);
+
+  var upperCase = confirm("Would you like to include uppercase characters?");
+  if (upperCase === true) {
+    characterTypes.push(1);
+  }
+  console.log(upperCase);
+
+  var numbers = confirm("Would you like to include numbers?");
+  if (numbers === true) {
+    characterTypes.push(2);
+  }
+  console.log(numbers);
+
+  var special = confirm("Would you like to include special characters?");
+  if (special === true) {
+    characterTypes.push(3);
+  }
+  console.log(special);
+
+  console.log(characterTypes);
+
+  var yourPassword = "";
+
+  // //Randomizer what character type to pick.
+  for (var i = 0; i < passwordLength; ++i) {
+    var randomCharacterType = characterTypes[Math.floor(Math.random() * characterTypes.length)];
+    console.log(randomCharacterType);
+
+    if (randomCharacterType === 0) {
+      console.log("Random lowercase");
+      var randomCharacterCode = Math.floor(Math.random() * 25) + 97;
+      console.log(randomCharacterCode);
+      var asciiCode = String.fromCharCode(randomCharacterCode);
+      console.log(asciiCode);
+      yourPassword = yourPassword.concat(asciiCode);
+    }
+    else if (randomCharacterType === 1) {
+      console.log("Random uppercase");
+      var randomCharacterCode = Math.floor(Math.random() * 25) + 97;
+      console.log(randomCharacterCode);
+      var asciiCode = String.fromCharCode(randomCharacterCode);
+      console.log(asciiCode);
+      yourPassword = yourPassword.concat(asciiCode);
+    }
+    else if (randomCharacterType === 2) {
+      console.log("Random number");
+      var randomCharacterCode = Math.floor(Math.random() * 9) + 48;
+      console.log(randomCharacterCode);
+      var asciiCode = String.fromCharCode(randomCharacterCode);
+      console.log(asciiCode);
+      yourPassword = yourPassword.concat(asciiCode);
+    }
+    else if (randomCharacterType === 3) {
+      console.log("Random special character");
+      var randomCharacterCode = Math.floor(Math.random() * 14) + 33;
+      console.log(randomCharacterCode);
+      var asciiCode = String.fromCharCode(randomCharacterCode);
+      console.log(asciiCode);
+      yourPassword = yourPassword.concat(asciiCode);
+    }
+    else {
+      alert("You must select a character type.");
+      console.log("No character type selected");
+    }
+    console.log("Your password is " + yourPassword);
+  }
+
+  return yourPassword;
+
+}
+
+
 // Write password to the #password input
 function writePassword() {
-  var passwordLength = prompt(
-    "Please enter password length between 8 and 128 characters."
-  );
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert("Your password must be between 8 and 128 characters.");
-  } else {
-    var upperCase = confirm("Do you want uppercase letter?"),
-      lowerCase = confirm("Do you want lowercase letter?"),
-      numeric = confirm("Do you want numeric characters?"),
-      special = confirm("Do you want special characters?");
-  }
-  var upperCaseOptions = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "U",
-    "X",
-    "Y",
-    "Z",
-  ];
-  var lowerCaseOptions = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  var numericOptions = [1,2,3,4,5,6,7,8,9,0];
+  console.log("Button clicked");
+  var password = generatePassword();
+  console.log("PRESENT PASSWORD "+ password);
+  var passwordText = document.querySelector("#password");
 
-  var specialOptions = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+  passwordText.value = password;
 
-  var userChoice= [];
+}
 
-  if (upperCase) {
-   userChoice.push(upperCaseOptions);
-  }
-  if (lowerCase) {
-    userChoice.push(lowerCaseOptions);
-  }
-  if (numeric) {
-    userChoice.push(numericOptions);
-  }
-  if (special) {
-    userChoice.push(specialOptions);
-  } else {
-   
-  }
-  console.log(userChoice);
-
-var userPassword = ("k");
-
-  for (i = 0; i < passwordLength; i++) {
-    userPassword += passwordLength.charAt()
-     Math.floor(Math.random() * userChoice.length)
-    ;} }
-
- //why does getting rid of 104 make button go away, and pop up automatically, but with it, its undefined?
-    console.log(userPassword);
-
-
- var password = writePassword();
-var passwordText = document.querySelector("#password");
-
-passwordText.value = password;
-
- //Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); 
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
