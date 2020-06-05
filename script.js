@@ -36,6 +36,28 @@ function generatePassword() {
   console.log(special);
 
   console.log(characterTypes);
+
+
+  // //Randomizer what character type to pick.
+
+  var randomCharacterType = characterTypes[Math.floor(Math.random() * characterTypes.length)];
+  console.log(randomCharacterType);
+
+  if (randomCharacterType === 0) {
+    console.log("Random lowercase");
+  }
+  else if (randomCharacterType === 1) {
+    console.log("Random uppercase");
+  }
+  else if (randomCharacterType === 2) {
+    console.log("Random number");
+  }
+  else if (randomCharacterType === 3) {
+    console.log("Random special character");
+  }
+  else { alert("You must select a character type.");
+    console.log("No character type selected");
+  }
 }
 
 // Write password to the #password input
