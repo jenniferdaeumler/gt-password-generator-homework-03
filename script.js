@@ -45,21 +45,34 @@ function generatePassword() {
 
   if (randomCharacterType === 0) {
     console.log("Random lowercase");
-    var randomCharacterCode = Math.floor(Math.random() * 25) +97;
+    var randomCharacterCode = Math.floor(Math.random() * 25) + 97;
     console.log(randomCharacterCode);
     var asciiCode = String.fromCharCode(randomCharacterCode);
     console.log(asciiCode);
   }
   else if (randomCharacterType === 1) {
     console.log("Random uppercase");
+    var randomCharacterCode = Math.floor(Math.random() * 25) + 97;
+    console.log(randomCharacterCode);
+    var asciiCode = String.fromCharCode(randomCharacterCode);
+    console.log(asciiCode);
   }
   else if (randomCharacterType === 2) {
     console.log("Random number");
+    var randomCharacterCode = Math.floor(Math.random() * 9) + 48;
+    console.log(randomCharacterCode);
+    var asciiCode = String.fromCharCode(randomCharacterCode);
+    console.log(asciiCode);
   }
   else if (randomCharacterType === 3) {
     console.log("Random special character");
+    var randomCharacterCode = Math.floor(Math.random() * 14) + 33;
+    console.log(randomCharacterCode);
+    var asciiCode = String.fromCharCode(randomCharacterCode);
+    console.log(asciiCode);
   }
-  else { alert("You must select a character type.");
+  else {
+    alert("You must select a character type.");
     console.log("No character type selected");
   }
 }
