@@ -37,6 +37,7 @@ function generatePassword() {
 
   console.log(characterTypes);
 
+var yourPassword= "";
 
   // //Randomizer what character type to pick.
 
@@ -49,6 +50,7 @@ function generatePassword() {
     console.log(randomCharacterCode);
     var asciiCode = String.fromCharCode(randomCharacterCode);
     console.log(asciiCode);
+    yourPassword = yourPassword.concat(asciiCode);
   }
   else if (randomCharacterType === 1) {
     console.log("Random uppercase");
@@ -56,6 +58,7 @@ function generatePassword() {
     console.log(randomCharacterCode);
     var asciiCode = String.fromCharCode(randomCharacterCode);
     console.log(asciiCode);
+    yourPassword = yourPassword.concat(asciiCode);
   }
   else if (randomCharacterType === 2) {
     console.log("Random number");
@@ -63,6 +66,7 @@ function generatePassword() {
     console.log(randomCharacterCode);
     var asciiCode = String.fromCharCode(randomCharacterCode);
     console.log(asciiCode);
+    yourPassword = yourPassword.concat(asciiCode);
   }
   else if (randomCharacterType === 3) {
     console.log("Random special character");
@@ -70,11 +74,15 @@ function generatePassword() {
     console.log(randomCharacterCode);
     var asciiCode = String.fromCharCode(randomCharacterCode);
     console.log(asciiCode);
+    yourPassword = yourPassword.concat(asciiCode);
   }
   else {
     alert("You must select a character type.");
     console.log("No character type selected");
   }
+  console.log("Your password is " + yourPassword);
+  return yourPassword;
+
 }
 
 // Write password to the #password input
