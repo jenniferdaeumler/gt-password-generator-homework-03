@@ -80,12 +80,12 @@ function generatePassword() {
       alert("You must select a character type.");
       console.log("No character type selected");
     }
-    console.log("Your password is " + yourPassword);}
-
-  console.log(yourPassword);
-    return yourPassword;
-
+    console.log("Your password is " + yourPassword);
   }
+
+  return yourPassword;
+
+}
 
 
 // Write password to the #password input
