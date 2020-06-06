@@ -22,7 +22,10 @@ If you have access to sensitive data and want to randomly generate a strong pass
 
 After all prompts are answered, a password will be shown in the box where the placeholder "Your Secure Password" is shown.
 
-SCREENSHOTS!
+<img src="https://i.imgur.com/t4oKZHE.png?1">
+<img src="https://i.imgur.com/tq47ruK.png?1">
+<img src="https://i.imgur.com/tGbyrDa.png?1">
+<img src="https://i.imgur.com/HCIeOsl.png?1">
 
 ## Credits
 -Solo projected completed as homework for Georgia Tech Full-Stack Flex Program. 

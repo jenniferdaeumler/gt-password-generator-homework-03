@@ -10,9 +10,7 @@ function generatePassword() {
 
 //Prompt to choose password length
   var passwordLength = prompt("Choose your password length by entering a number between 8 and 128.");
-  console.log(passwordLength);
-
-
+  
 //Character type empty array, to be filled with user choices
   var characterTypes = [];
 
@@ -113,6 +111,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // //If password length is >128, <8, or a letter, cannot get to work.
-// if(passwordLength = String){alert("Pick a numeric character between 8 and 128.");}
-//   else if (passwordLength > 128){alert("Pick a numberic character between 8 and 128.");} 
-//   else if (passwordLength < 8){alert("Pick a numberic character between 8 and 128.");} 
+// //   if(passwordLength = String){return;}
+// else if (passwordLength > 128){return;}
+// else if (passwordLength < 8){return;} 
+// else {(passwordLength >=8 || passwordLength <128); console.log(passwordLength);}
