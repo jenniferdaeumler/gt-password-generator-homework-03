@@ -1,16 +1,22 @@
+//Console.log check
 console.log("This is script.js");
 
-// Assignment Code
+//Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 //Function for generatePassword to be used in writePassword function
 function generatePassword() {
   console.log("generatePassword initiated");
+
+//Prompt to choose password length
   var passwordLength = prompt("Choose your password length by entering a number between 8 and 128.");
   console.log(passwordLength);
 
+
+//Character type empty array, to be filled with user choices
   var characterTypes = [];
 
+  //Confirmation for various character types, pushed into array, logged
   var lowerCase = confirm("Would you like to include lowercase characters?");
   if (lowerCase === true) {
     characterTypes.push(0);
@@ -81,7 +87,10 @@ function generatePassword() {
       console.log("No character type selected");
     }
     console.log("Your password is " + yourPassword);
+    
+    
   }
+  
 
   return yourPassword;
 
@@ -101,3 +110,9 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// //If password length is >128, <8, or a letter, cannot get to work.
+// if(passwordLength = String){alert("Pick a numeric character between 8 and 128.");}
+//   else if (passwordLength > 128){alert("Pick a numberic character between 8 and 128.");} 
+//   else if (passwordLength < 8){alert("Pick a numberic character between 8 and 128.");} 
