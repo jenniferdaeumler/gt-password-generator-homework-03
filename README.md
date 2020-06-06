@@ -20,11 +20,14 @@ Clone the repo, and run the files in browser.
 ## Usage 
 If you have access to sensitive data and want to randomly generate a strong password that meets certain criteria use this.  Click the generate password button, and you will be presented with a series of prompts and alerts. Type in a number between 8 and 128 to choose your length.  If you choose a number outside the specified length, you will be asked to try again. The rest of the alerts ask if you would like lowercase characters, uppercase characters, numbers, and/or special characters.  Select "OK" if you would like to include the character type, select "cancel" if you would not like to include the character type.  You must select at least one character type to avoid an error message.  
 
-After all prompts are answered, a password will be shown in the box where the placeholder "Your Secure Password" is shown.
-
+After all prompts are answered, a password will be shown in the box where the placeholder "Your Secure Password" is shown. <br>
+<br>Screen when opening app.
 <img src="https://i.imgur.com/ImIpTG4.png">
+<br><br>Screen after clicking button, length of password prompt.
 <img src="https://i.imgur.com/Z5SGKPr.png">
+<br><br> One of four character type prompt.  OK for yes, cancel for no.
 <img src="https://i.imgur.com/CjxfZkf.png">
+<br><br>Password result after specifications made.
 <img src="https://i.imgur.com/kHprPSC.png">
 
 ## Credits
