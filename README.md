@@ -22,13 +22,13 @@ If you have access to sensitive data and want to randomly generate a strong pass
 
 After all prompts are answered, a password will be shown in the box where the placeholder "Your Secure Password" is shown. <br>
 <br>Screen when opening app.
-<img src="https://i.imgur.com/ImIpTG4.png">
+<img src="https://i.imgur.com/LpJQayp.png">
 <br><br>Screen after clicking button, length of password prompt.
-<img src="https://i.imgur.com/Z5SGKPr.png">
+<img src="https://i.imgur.com/sdc7KWO.png">
 <br><br> One of four character type prompt.  OK for yes, cancel for no.
-<img src="https://i.imgur.com/CjxfZkf.png">
+<img src="https://i.imgur.com/Rscaej4.png">
 <br><br>Password result after specifications made.
-<img src="https://i.imgur.com/kHprPSC.png">
+<img src="https://i.imgur.com/1PD8MhE.png">
 
 ## Credits
 -Solo projected completed as homework for Georgia Tech Full-Stack Flex Program. 
