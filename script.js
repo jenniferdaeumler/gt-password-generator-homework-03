@@ -12,17 +12,21 @@ function generatePassword() {
   var passwordLength = prompt(
     "Choose your password length by entering a number between 8 and 128."
   );
-  if (passwordLength < 8 || passwordLength > 128) {
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength))  {
     alert("You must select a number between 8 and 128. Try again.");
-    console.log("Number does not meet length criteria");
+    console.log("Number does not meet criteria");
     return "Try again.";
   }
+  //CANT GET TO WORK!
   // else if (typeof passwordLength == 'string') {
   //   alert("You must select a number between 8 and 128. Try again.");
   //   console.log("Number does not meet character type criteria");
   //   return "Try again.";
   // }
-  else { console.log(passwordLength); }
+
+  else {
+    console.log(passwordLength);
+  }
 
   //Character type empty array, to be filled with user choices
   var characterTypes = [];
@@ -62,6 +66,7 @@ function generatePassword() {
       characterTypes[Math.floor(Math.random() * characterTypes.length)];
     console.log(randomCharacterType);
 
+//Logs random type associated with random number, assigns ascii code. 
     if (randomCharacterType === 0) {
       console.log("Random lowercase");
       var randomCharacterCode = Math.floor(Math.random() * 25) + 97;
