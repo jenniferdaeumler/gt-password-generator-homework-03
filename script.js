@@ -10,7 +10,9 @@ function generatePassword() {
 
 //Prompt to choose password length
   var passwordLength = prompt("Choose your password length by entering a number between 8 and 128.");
-  
+  if(passwordLength >7 || passwordLength <129) {console.log(passwordLength);}
+  else{alert("You must select a number between 8 and 128. Try again."); console.log("Wrong character type entered");return;}
+
 //Character type empty array, to be filled with user choices
   var characterTypes = [];
 
@@ -85,7 +87,7 @@ function generatePassword() {
       console.log("No character type selected");
     }
     console.log("Your password is " + yourPassword);
-    
+   
     
   }
   
