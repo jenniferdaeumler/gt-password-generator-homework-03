@@ -8,12 +8,27 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   console.log("generatePassword initiated");
 
-//Prompt to choose password length
-  var passwordLength = prompt("Choose your password length by entering a number between 8 and 128.");
-  if(passwordLength >7 || passwordLength <129) {console.log(passwordLength);}
-  else{alert("You must select a number between 8 and 128. Try again."); console.log("Wrong character type entered");return;}
+  //Prompt to choose password length
+  var passwordLength = prompt(
+    "Choose your password length by entering a number between 8 and 128."
+  );
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength))  {
+    alert("You must select a number between 8 and 128. Try again.");
+    console.log("Number does not meet criteria");
+    return "Try again.";
+  }
+  //CANT GET TO WORK!
+  // else if (typeof passwordLength == 'string') {
+  //   alert("You must select a number between 8 and 128. Try again.");
+  //   console.log("Number does not meet character type criteria");
+  //   return "Try again.";
+  // }
 
-//Character type empty array, to be filled with user choices
+  else {
+    console.log(passwordLength);
+  }
+
+  //Character type empty array, to be filled with user choices
   var characterTypes = [];
 
   //Confirmation for various character types, pushed into array, logged
@@ -47,9 +62,11 @@ function generatePassword() {
 
   // //Randomizer what character type to pick.
   for (var i = 0; i < passwordLength; ++i) {
-    var randomCharacterType = characterTypes[Math.floor(Math.random() * characterTypes.length)];
+    var randomCharacterType =
+      characterTypes[Math.floor(Math.random() * characterTypes.length)];
     console.log(randomCharacterType);
 
+//Logs random type associated with random number, assigns ascii code. 
     if (randomCharacterType === 0) {
       console.log("Random lowercase");
       var randomCharacterCode = Math.floor(Math.random() * 25) + 97;
@@ -57,63 +74,52 @@ function generatePassword() {
       var asciiCode = String.fromCharCode(randomCharacterCode);
       console.log(asciiCode);
       yourPassword = yourPassword.concat(asciiCode);
-    }
-    else if (randomCharacterType === 1) {
+    } else if (randomCharacterType === 1) {
       console.log("Random uppercase");
       var randomCharacterCode = Math.floor(Math.random() * 25) + 65;
       console.log(randomCharacterCode);
       var asciiCode = String.fromCharCode(randomCharacterCode);
       console.log(asciiCode);
       yourPassword = yourPassword.concat(asciiCode);
-    }
-    else if (randomCharacterType === 2) {
+    } else if (randomCharacterType === 2) {
       console.log("Random number");
       var randomCharacterCode = Math.floor(Math.random() * 9) + 48;
       console.log(randomCharacterCode);
       var asciiCode = String.fromCharCode(randomCharacterCode);
       console.log(asciiCode);
       yourPassword = yourPassword.concat(asciiCode);
-    }
-    else if (randomCharacterType === 3) {
+    } else if (randomCharacterType === 3) {
       console.log("Random special character");
       var randomCharacterCode = Math.floor(Math.random() * 14) + 33;
       console.log(randomCharacterCode);
       var asciiCode = String.fromCharCode(randomCharacterCode);
       console.log(asciiCode);
       yourPassword = yourPassword.concat(asciiCode);
-    }
-    else {
+    } else {
       alert("You must select a character type.");
       console.log("No character type selected");
     }
     console.log("Your password is " + yourPassword);
-   
-    
   }
-  
 
   return yourPassword;
-
 }
-
 
 // Write password to the #password input
 function writePassword() {
   console.log("Button clicked");
   var password = generatePassword();
-  console.log("PRESENT PASSWORD "+ password);
+  console.log("PRESENT PASSWORD " + password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
 // //If password length is >128, <8, or a letter, cannot get to work.
 // //   if(passwordLength = String){return;}
 // else if (passwordLength > 128){return;}
-// else if (passwordLength < 8){return;} 
+// else if (passwordLength < 8){return;}
 // else {(passwordLength >=8 || passwordLength <128); console.log(passwordLength);}
